@@ -1,0 +1,477 @@
+@import "nullstyle.scss";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+/*Обязательно писать!!!!!*/
+html, body {
+	box-sizing: border-box;
+	height: 100%;
+	font-family: 'Merriweather', serif;
+	font-style: normal;
+   font-size: 18px;
+   line-height: 54px;
+   font-weight: normal;
+   color: #3c3c3c;
+}
+/*Что-то типо обнуляющего стиля!!!!! Оч важно*/
+img{
+	max-width: 100%;
+	height: auto;
+}
+.ibg{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	img{display: none;}
+}
+.wrapper {
+	overflow: hidden;
+	min-height: 100%;
+}
+.container{
+	max-width: 1520px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+.page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.header {
+	position: absolute;
+	top: 69px;
+	right: 0;
+	width: 100%;
+	z-index: 50;
+	&__row {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	}
+	&__menu {}
+}
+
+.title{	
+	&__main{
+	max-width: 520px;
+	display: flex;
+	position: absolute;
+	top: 40%;
+	right: 15%;
+	width: 100%;
+	justify-content: flex-end;
+	align-items: center;
+	z-index: 50;
+	}
+	&__text{
+		padding-bottom: 80px;
+		text-align: center;
+		font-size: 40px;
+		line-height: 55px;
+		font-weight: 300;
+		letter-spacing: -0.02em;
+		background: url("../img/icons/decoration.png") bottom center no-repeat;
+	}
+}
+
+.menu {
+	&__list {
+		display: flex;
+	}
+	&__list li{
+		/*line-height  в макете стоял просто огромный, больше 55, из-за этого вокруг пунктов уже был отступ*/
+		line-height: 18px;
+	}
+	/*Говнище какое-то, при наведении на мени, пункты немного сдвигаются. Уже всё перепробовала*/
+	&__link {
+		padding: 15px 20px;
+		color: inherit;
+		margin: 0 15px;
+		&:hover{
+			border: 0.8px solid #3c3c3c;
+
+			}
+		}
+}
+.main-screen {
+	flex: 1 0 100%;
+	/*c position: relative; у меня не отображается, поэтому я её убираю
+	position: relative;*/
+	position: relative;
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+.string {
+	background: url("../img/wall.png") center no-repeat;
+	background-size: cover;
+	padding: 67px 0 87px 0;
+	&__row {
+		
+	}
+	&__columns {
+		display: flex;
+		justify-content: center;
+	}
+	&__column {
+		text-align: center;
+		margin: 0 50px;
+	}
+	&__title {
+		margin-bottom: 20px;
+		padding-top: 100px;
+		line-height: 30px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: -0.02em;
+	}
+	&__desc {
+		font-size: 16px;
+		line-height: 30px;
+		font-weight: 300;
+		letter-spacing: -0.02em;
+	}
+}
+.title-nood{
+		background: url("../img/icons/noodle.png") top center no-repeat;
+}
+.title-tea{
+		background: url("../img/icons/tea.png") top center no-repeat;
+}
+.title-sweet{
+		background: url("../img/icons/sweet.png") top center no-repeat;
+}
+.specials {
+	padding: 80px 0 104px 0;
+	text-align: center;
+	&__title {
+		
+	}
+	&__column {
+		display: flex;
+	}
+}
+.title-forall{
+		padding-bottom: 56px;
+		font-size: 40px;
+		line-height: 55px;
+		font-weight: 300;
+		letter-spacing: -0.02em;
+		background: url("../img/icons/decoration.png") bottom center no-repeat;
+}
+.columns-first {
+		margin-top: 57px;
+	}
+
+.column {
+	&__image {
+		flex: 1;
+	}
+	&__card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+		background-color: #ebebeb;
+	}
+	&__title {
+		line-height: 30px;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		color: #3c3c3c;
+		position: relative;
+		margin-bottom: 24px;
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;	
+			width: 88px;
+			height: 1px;
+/*У Винтика подсмотрела, марджин слева это половина от длины полоски*/
+			left: 50%;
+			margin-left: -44px;
+			background-color: #3c3c3c;
+			margin-top: 10px;
+		}
+	}
+	&__desc {
+		font-size: 16px;
+		line-height: 18px;
+		font-weight: 300;
+		letter-spacing: -0.02em;
+		margin-bottom: 16px;
+	}
+	&__number {
+	line-height: 30px;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	}
+}
+.about {	
+	width: 100%;
+	background: #efefef;
+	&__row{
+		display: flex;
+	}
+	&__image{
+	padding-top: 73px;
+	flex: 0 1 50%;
+	}
+	&__title {
+	padding-left: 15px;
+	padding-top: 248px;
+	text-align: center;
+ 	flex: 0 1 50%;
+	}
+	&__title-sec {}
+	&__desc {
+		margin: 58px auto 0px auto;
+		max-width: 606px;
+		padding-bottom: 200px;
+		font-size: 30px;
+		line-height: 54px;
+		font-weight: 300;
+		letter-spacing: -0.02em;
+		background: url("../img/icons/schrift.png")bottom right no-repeat;
+	}
+	@media (max-width:1700px){
+		&__desc{
+			margin-top: 18px;
+			margin-bottom: 0px;
+			padding-bottom: 150px;
+		}
+		.title-forall {
+			padding-bottom: 36px;
+		}
+	}
+	@media (max-width:1570px){
+		&__image{
+			max-width: 60%;
+		}
+	}
+		@media (max-width:1500px){
+			&__desc{
+			font-size: 20px;
+    		line-height: 42px;
+			}
+		}
+	@media (max-width:1355px){
+		.about__title{
+			padding-top: 100px;
+		}
+	}
+}
+.menu {
+	&__title {
+		padding-top: 69px;
+		text-align: center;
+		margin-bottom: 68px;
+		padding-bottom: 43px;
+	}
+	&__row-menu {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 100px;
+	}
+	&__nav {}
+	&__list {}
+	&__link-men {}
+	&__row {
+		display: flex;
+		justify-content: center;
+	}
+	&__columns {
+		padding-left: 15px;
+		margin-left: -50px;
+		margin-right: 75px;
+		flex: 0 0 50%;
+	}
+/*Адаптив*/
+		@media (max-width:1353px){
+			&__columns{
+		margin-left: 2px;
+   	margin-right: 15px;
+			}
+			&__columns-second{
+				margin-left: 25px;
+			}
+
+	}
+	&__columns-second{
+		margin-left: 45px;
+		flex: 0 0 50%;
+	}
+	&__columns-row{
+		display: flex;	
+	}
+	&__column {}
+	&__punkt {
+		line-height: 1px;
+		font-weight: 300;
+		letter-spacing: -0.02em;
+	}
+	&__desc {
+		margin-bottom: 42px;
+		font-size: 14px;
+		line-height: 54px;
+		font-weight: 300;
+		font-style: italic;
+		letter-spacing: -0.02em;
+	}
+	@media (max-width:1200px){
+		&__columns-second{
+			margin-left: 15px;
+			margin-top: 20px;
+		}
+		&__columns-row{
+			flex-direction: column;
+		}
+		&__columns{
+			 margin-bottom: 30px;
+			 background: url("../img/icons/decoration.png") bottom center no-repeat;
+		}
+
+	}
+	@media (max-width:890px){
+		&__columns-second{
+		margin-left: 20px;
+		}	
+		&__columns{
+		 padding-left: 30px;
+		}
+		&__title{
+		padding-top: 29px;
+		margin-bottom: 28px;
+		}
+		&__row-menu{
+		margin-bottom: 70px;
+		}
+	}
+}
+.contakt {
+	background: url("../img/contakt.png") center no-repeat;
+	background-size: cover;
+	position: relative;
+/*Без этого, блока можно считать,что нет*/
+	min-width: 100%;
+	min-height: 100%;
+	padding-bottom: 290px;
+	&__row {
+	display: block;
+	position: absolute;
+	top: 3%;
+	right: 10%;
+	z-index: 4;
+	}
+	&__title {
+		margin-left: -20px;
+		padding-top: 65px;
+		text-align: center;
+		margin-bottom: 62px;
+	}
+	&__vegg {
+		display: flex;	
+	}
+	&__veggie {
+		margin-right: 82px;
+	}
+	&__vegg-title {
+		line-height: 45px;
+		text-transform: uppercase;
+	}
+	&__desc {
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 102px;
+	}
+	&__reserv {
+		margin-left: 82px;
+	}
+	&__title-form {
+		line-height: 18px;
+		margin-bottom: 41px;
+		text-transform: uppercase;
+	}
+	&__form {}
+	&__formall {}
+	&__input {
+		padding-left: 20px;
+		padding-bottom: 15px;
+		margin: 0 60px 70px 0;
+		font-size: 18px;
+/*прозрачное поле ввода*/
+		background-color:rgba(0, 0, 0, 0);
+		font-style: italic;
+		width: 254px;
+		border-bottom: 1px solid #3c3c3c;
+	}
+	&__massage {
+		font-size: 18px;
+		background-color:rgba(0, 0, 0, 0);
+		font-style: italic;
+		width: 570px;
+		border-bottom: 1px solid #3c3c3c;
+		padding-left: 20px;
+		padding-bottom: 15px;
+		margin-bottom: 52px;
+	}
+	&__but {
+		margin: 0 auto;
+		display: block;
+		font-size: 18px;
+	}
+	&__foot-desc{
+	display: block;
+	position: absolute;
+	bottom: 3%;
+	right: 50%;
+	z-index: 4;
+	}
+}
+.input-first{
+	margin-left: 0;
+}
+
+.foot {
+	&__row {	
+	display: flex;
+	}
+	&__desc {
+	padding-bottom: 20px;
+	position: absolute;
+	bottom: 0;
+	right: 45%;
+	z-index: 4;
+	}
+	&__image {	
+	padding-bottom: 20px;
+	position: absolute;
+	bottom: 0;
+	right: 15%;
+	z-index: 4;
+	}
+	&__image img{
+		margin-right: 12px;
+	}
+}
+@media (max-width:1353px){
+	.title-forall{
+	 padding-top: 49px;
+    margin-bottom: 28px;
+    padding-bottom: 33px;
+	}
+	.menu__row-menu {
+	 margin-bottom: 60px;
+	}
+}
